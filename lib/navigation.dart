@@ -21,11 +21,16 @@ class _NavigationtaskState extends State<Navigationtask> {
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Column(
+
             children: [
+              
+              CircleAvatar(),
+              Spacer(),
+              Icon(Icons.brightness_5),
               Row(
                 
                 children: [
-                CircleAvatar(),
+                
                 SizedBox(width: 10,),
                 Text("Safareena",style: TextStyle(fontWeight: FontWeight.bold),)
               ],),
@@ -61,31 +66,39 @@ class _NavigationtaskState extends State<Navigationtask> {
           },
         ),
         body: [
-           Card(
-            child: Center(child: Builder(
-              builder: (context) {
-                return TextButton(
-                  onPressed: (){
-            
-            showModalBottomSheet(
-              
-              
-            
-              constraints: BoxConstraints(
-                maxHeight: 500,
-                minHeight: 200
-              ),
-              context: context,
-              
-              builder: (context) =>Container(color: Colors.red,
-              child: SingleChildScrollView(),)
-              // BottomSheet(onClosing: (){}, builder: (context) => Container(color: Colors.red,) ,);
-            );
-                  },
-                  child: const Text("Home Page"));
-              }
-            )),
-          ),
+           Center(child: TextButton(
+             onPressed: (){
+               
+                      
+                      showModalBottomSheet(
+                        
+                        
+                      
+                        constraints: const BoxConstraints(
+                          maxHeight: 500,
+                          minHeight: 200
+                        ),
+                        context: context,
+                        
+                        builder: (context) =>Container(
+                          height: 200,
+                          child: const Column(
+                            children: [
+                              ListTile(
+                                leading: Icon(Icons.photo),
+                                title: Text("Photo"),
+                              ),
+                              ListTile(
+                                leading: Icon(Icons.music_note),
+                                title: Text("Music"),
+                              )
+                            ],
+                          ),
+                        )
+                        // BottomSheet(onClosing: (){}, builder: (context) => Container(color: Colors.red,) ,);
+                      );
+             },
+             child: const Text("Home Page"))),
           const Column(
             children: [
               Card(

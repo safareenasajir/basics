@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sample_1/home.dart';
+import 'package:sample_1/inkwell.dart';
+import 'package:sample_1/music.dart';
+import 'package:sample_1/music2.dart';
+import 'package:sample_1/pages.dart';
+import 'package:sample_1/popupmenu.dart';
+import 'package:sample_1/rail.dart';
+import 'package:sample_1/samplesetting.dart';
+import 'package:sample_1/search.dart';
+import 'package:sample_1/task1.dart';
+import 'package:sample_1/task2.dart';
+import 'package:sample_1/task3.dart';
+import 'package:sample_1/task4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -32,7 +45,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Homepage(),
+      home: const Task3(),
     );
   }
 }
