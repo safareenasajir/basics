@@ -5,6 +5,8 @@ import 'package:sample_1/music.dart';
 import 'package:sample_1/music2.dart';
 import 'package:sample_1/pages.dart';
 import 'package:sample_1/popupmenu.dart';
+import 'package:sample_1/pro1.dart';
+import 'package:sample_1/product.dart';
 import 'package:sample_1/rail.dart';
 import 'package:sample_1/samplesetting.dart';
 import 'package:sample_1/search.dart';

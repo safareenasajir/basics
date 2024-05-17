@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_1/product.dart';
 
 class Catagory extends StatefulWidget {
   const Catagory({super.key});
@@ -126,38 +127,44 @@ class _CatagoryState extends State<Catagory> {
                                   ),
                           itemCount: products.length,
                           itemBuilder: (context, index) {
-                            return Container(
-                              decoration: const BoxDecoration(boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              offset: Offset(
-                                3.0,
-                                10.0,
+                            return InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Product(),));
+                              },
+                              child: Container(
+                                decoration: const BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(
+                                  3.0,
+                                  10.0,
+                                ),
+                                blurRadius: 5.0,
+                                spreadRadius: 4.0,
                               ),
-                              blurRadius: 5.0,
-                              spreadRadius: 4.0,
-                            ),
-                            BoxShadow(
-                              color: Colors.white,
-                              offset: Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 0.0,
-                            ),
-                            
-                          ]),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                      
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  products[index]["image"]),
-                                              ))),
-                                  Text(products[index]['productname']),
-                                  Text(products[index]['offer']),
-                                ],
+                              BoxShadow(
+                                color: Colors.white,
+                                offset: Offset(0.0, 0.0),
+                                blurRadius: 0.0,
+                                spreadRadius: 0.0,
+                              ),
+                              
+                                                        ]),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                        
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    products[index]["image"]),
+                                                ))),
+                                    Text(products[index]['productname']),
+                                    Text(products[index]['offer']),
+                              
+                                  ],
+                                ),
                               ),
                             );
                           },
@@ -199,19 +206,7 @@ class _CatagoryState extends State<Catagory> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-          items:  [BottomNavigationBarItem(
-            label: "Home",
-            icon: Icon(Icons.home)),
-            BottomNavigationBarItem(icon: Icon(Icons.abc),label: "Blog"),
-            BottomNavigationBarItem(icon: IconButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Catagory(),));
-
-            }, icon: Icon(Icons.auto_awesome_mosaic)),label: "Catagory"),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: "Cart"),
-            BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined),label: "Account")
-          ]),
+      
     );
   }
 }
